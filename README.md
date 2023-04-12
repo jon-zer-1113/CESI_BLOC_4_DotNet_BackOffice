@@ -1,4 +1,4 @@
-# NegoSud-Gascogne
+# NegoSud-Back Office
 
 Ce projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
