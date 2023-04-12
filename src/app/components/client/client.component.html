@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+
+<div class="content">
+    <h1>Gestion clients</h1>
+    <dx-data-grid class="tab" id="gridContainer" [dataSource]="clients" keyExpr="id" [showBorders]="true"
+        (onRowUpdating)="updateClient($event)" (onRowInserting)="addClient($event)"
+        (onRowRemoving)="removeClient($event)">
+
+        <dxo-search-panel [visible]="true"></dxo-search-panel>
+        <dxo-paging [pageSize]="10"> </dxo-paging>
+        <dxo-pager [visible]="true" [allowedPageSizes]="allowedPageSizes" [displayMode]="displayMode"
+            [showPageSizeSelector]="showPageSizeSelector" [showInfo]="showInfo"
+            [showNavigationButtons]="showNavButtons">
+        </dxo-pager>
+        <dxo-editing mode="form" [allowUpdating]="true" [allowAdding]="true" [allowDeleting]="true">
+        </dxo-editing>
+
+        <dxi-column dataField="nom" caption="Nom"></dxi-column>
+        <dxi-column dataField="prenom" caption="Prénom"></dxi-column>
+        <dxi-column dataField="tel" caption="Télèphone"></dxi-column>
+        <dxi-column dataField="email" caption="E-mail"></dxi-column>
+
+    </dx-data-grid>
+</div>

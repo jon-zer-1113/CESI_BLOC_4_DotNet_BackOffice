@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+
+<div class="content">
+    <h1>Gestion fournisseurs</h1>
+    <dx-data-grid class="tab" id="gridContainer" [dataSource]="fournisseurs" keyExpr="id" [showBorders]="true"
+        (onRowUpdating)="updateFournisseur($event)" (onRowInserting)="addFournisseur($event)"
+        (onRowRemoving)="removeFournisseur($event)">
+
+        <dxo-search-panel [visible]="true"></dxo-search-panel>
+        <dxo-paging [pageSize]="10"> </dxo-paging>
+        <dxo-pager [visible]="true" [allowedPageSizes]="allowedPageSizes" [displayMode]="displayMode"
+            [showPageSizeSelector]="showPageSizeSelector" [showInfo]="showInfo"
+            [showNavigationButtons]="showNavButtons">
+        </dxo-pager>
+        <dxo-editing mode="form" [allowUpdating]="true" [allowAdding]="true" [allowDeleting]="true">
+        </dxo-editing>
+
+        <dxi-column dataField="nom" caption="Nom"></dxi-column>
+        <dxi-column dataField="email" caption="E-Mail"></dxi-column>
+        <dxi-column dataField="code_postal" caption="Code Postal"></dxi-column>
+        <dxi-column dataField="pays" caption="Pays"></dxi-column>
+        <dxi-column dataField="tel" caption="Télèphone"></dxi-column>
+        <dxi-column dataField="siret" caption="Siret"></dxi-column> 
+
+    </dx-data-grid>
+</div>
